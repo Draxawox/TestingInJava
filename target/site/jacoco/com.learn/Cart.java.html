@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Cart.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JunitTest</a> &gt; <a href="index.source.html" class="el_package">com.learn</a> &gt; <span class="el_source">Cart.java</span></div><h1>Cart.java</h1><pre class="source lang-java linenums">package com.learn;
+
+import com.learn.order.Order;
+
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="fc" id="L8">public class Cart {</span>
+
+<span class="fc" id="L10">    private List&lt;Order&gt; orders = new ArrayList&lt;&gt;();</span>
+
+    void addOrderToCart(Order order) {
+<span class="fc" id="L13">        this.orders.add(order);</span>
+<span class="fc" id="L14">    }</span>
+
+    void clearCart() {
+<span class="fc" id="L17">        this.orders.clear();</span>
+<span class="fc" id="L18">    }</span>
+    void simulateLargeOrder() {
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        for (int i = 0; i &lt; 1000; i++) {</span>
+<span class="fc" id="L21">            Meal meal = new Meal(i % 10, &quot;Hamburger no &quot; + i);</span>
+<span class="fc" id="L22">            Order order = new Order();</span>
+<span class="fc" id="L23">            order.addMealToOrder(meal);</span>
+<span class="fc" id="L24">            addOrderToCart(order);</span>
+        }
+<span class="fc" id="L26">        System.out.println(&quot;Cart size &quot; + orders.size());</span>
+<span class="fc" id="L27">        clearCart();</span>
+<span class="fc" id="L28">    }</span>
+
+    public List&lt;Order&gt; getOrders() {
+<span class="fc" id="L31">        return orders;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
